@@ -1,0 +1,23 @@
+#takes an array of strings, and searches for array elements in the string.
+#problem is I'm realizing the limits of the include? method; it ceases looking after finding an instance
+#even if there are additional include? instances later in the string.
+
+
+def substrings(string, dictionary)
+  dict_count = Hash.new #create the hash that will record the substrings
+  dictionary.each {|dict_word| dict_count[dict_word] = 0} #load hash with all of the elements in the dictionary array, and each value is 0
+  
+  dictionary.each do |dict_word| 
+      if string.include?(dict_word)
+        dict_count[dict_word] += 1 #add one to the tally of found words...
+      else 
+        next
+      end
+  end
+  puts dict_count #display the final tally.
+end
+
+puts "what's the string input to check against the dictionary?"
+string = gets.chomp
+dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
+substrings(string, dictionary)
