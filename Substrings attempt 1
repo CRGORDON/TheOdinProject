@@ -1,4 +1,4 @@
-#takes an array of strings, and searches for array elements in the string.
+#takes an array of strings, and searches for array elements in another string.
 #problem is I'm realizing the limits of the include? method; it ceases looking after finding an instance
 #even if there are additional include? instances later in the string.
 
